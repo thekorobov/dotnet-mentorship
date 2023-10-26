@@ -1,0 +1,93 @@
+@{
+    ViewBag.Title = "Execute C# Code";
+}
+
+<style>
+    .container {
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+          width: 100%;
+    }
+</style>
+
+<div class="text-center my-4">
+    <h1>@ViewBag.Title</h1>
+</div>
+
+<div class="container">
+    <div id="code-editor-section">
+        <div id="code-editor" style="height:450px; font-size: 16px; border: 1px solid #ccc; 
+        border-radius: 10px; box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);"></div>
+
+        <br>
+
+        <div class="editor-bottom-section">
+            <button id="themeIcon" class="theme-toggle-icon" onclick="codeEditor.toggleTheme()"></button>
+            <button id="clearEditor" class="clear-editor-icon" onclick="codeEditor.clearEditor()"></button>
+            <button id="downloadCodeBtn" class="download-icon" onclick="codeExecutor.downloadEditorContent()"></button>
+            <button id="resetIcon" class="reset-toggle-icon" hidden onclick="codeExecutor.resetEditor()"></button>
+            
+            <button class="execute-code-button" onclick="codeExecutor.executeCode()">Execute Code</button>
+            <button class="save-to-storage-button" id="saveToStorageButton" onclick="codeExecutor.saveToBlob()">Save Snippet to Storage</button>
+            
+            <button class="save-blob-button" id="saveBlobButton" hidden onclick="codeExecutor.saveEdits()">Save</button>
+            <button class="delete-blob-button" id="deleteBlobButton" hidden onclick="codeExecutor.deleteBlobFile()">Delete</button>
+            
+            <span class="info-text" id="infoTextBlock">You can <strong>upload</strong> the file from your computer and <strong>run</strong> the code. <br/> <strong>Select</strong> the file and run it.</span>
+            
+            <label class="choose-file-button" id="chooseFileButton">
+                Choose File
+                <input type="file" id="codeFileInput" accept=".cs,.txt" style="display: none;" onchange="codeExecutor.updateFileName()" />
+            </label>
+            
+            <button class="execute-file-button" id="executeFileButton" onclick="codeExecutor.uploadAndExecuteCodeFromFile()">Execute File</button>
+            
+            <div class="file-name-section" id="fileNameSection">
+                <span class="info-text" style="display: inline-block; font-size: 18px"><strong>File name:</strong></span>
+                <span id="selectedFileName"></span>
+            </div>
+        </div>
+        
+    <div class="result-card">
+        <div>
+            <span class="result-header">Result</span>
+            <pre id="result"></pre>
+        </div>
+        
+        <div>
+            <span class="result-header">Console Output</span>
+            <pre id="consoleOutput"></pre>
+        </div>
+        
+        <div>
+            <span class="result-header">Error</span>
+            <pre id="errorOutput"></pre>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="blob-management-section">
+        <h4>Available files in Storage</h4>
+        <div id="blobFilesList"></div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ace.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.4.12/ext-language_tools.js"></script>
+    <script src="~/js/CodeExecutor.js"></script>
+    <script src="~/js/CodeEditor.js"></script>
+    
+    <script>
+        const codeEditor = new CodeEditor(); 
+        const codeExecutor = new CodeExecutor(codeEditor);
+        
+        document.addEventListener("DOMContentLoaded", function() {
+        const fileNameSection = document.querySelector('.file-name-section');
+        fileNameSection.style.display = 'none'; 
+        codeExecutor.refreshBlobFileList();
+        });
+    </script>
+}

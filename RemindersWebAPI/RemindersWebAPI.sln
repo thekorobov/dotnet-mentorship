@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminders.WebAPI", "Reminders.WebAPI\Reminders.WebAPI.csproj", "{18E20885-720F-4B88-A491-9204034C0E8E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminders.BLL", "Reminders.BLL\Reminders.BLL.csproj", "{D5A60391-F161-444D-9581-B2B7EAE97EE7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminders.DAL", "Reminders.DAL\Reminders.DAL.csproj", "{73B19569-BCC7-48FC-8897-13520F88F4B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reminders.UnitTests", "Reminders.UnitTests\Reminders.UnitTests.csproj", "{57223C94-D718-4AB1-A248-4F61863AE7FD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18E20885-720F-4B88-A491-9204034C0E8E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E20885-720F-4B88-A491-9204034C0E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E20885-720F-4B88-A491-9204034C0E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E20885-720F-4B88-A491-9204034C0E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5A60391-F161-444D-9581-B2B7EAE97EE7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5A60391-F161-444D-9581-B2B7EAE97EE7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5A60391-F161-444D-9581-B2B7EAE97EE7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5A60391-F161-444D-9581-B2B7EAE97EE7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73B19569-BCC7-48FC-8897-13520F88F4B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73B19569-BCC7-48FC-8897-13520F88F4B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73B19569-BCC7-48FC-8897-13520F88F4B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73B19569-BCC7-48FC-8897-13520F88F4B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57223C94-D718-4AB1-A248-4F61863AE7FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57223C94-D718-4AB1-A248-4F61863AE7FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57223C94-D718-4AB1-A248-4F61863AE7FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57223C94-D718-4AB1-A248-4F61863AE7FD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

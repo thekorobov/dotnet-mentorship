@@ -1,0 +1,42 @@
+<div class="container-fluid">
+
+  <div class="custom-card">
+
+    <div class="form-group">
+      <input type="email" [(ngModel)]="email" placeholder="Enter email address" class="form-control" />
+    </div>
+
+    <div class="form-group position-relative">
+      <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" placeholder="Enter password" class="form-control" />
+      <button type="button" class="eye-button" (click)="togglePasswordVisibility()">
+        <img [src]="showPassword ? 'assets/images/hide.png' : 'assets/images/show.png'" alt="Toggle Password Visibility">
+      </button>
+    </div>
+
+    <div class="button-group">
+      <button class="btn btn-block btn-primary" style="margin-right: 20px;" (click)="onLoginClick()">Login</button>
+      <button class="btn btn-primary" (click)="onRegisterClick()">Register</button>
+    </div>
+
+    <div class="horizontal-line-text">
+      <span>or</span>
+    </div>
+
+    <button class="btn btn-block google-sign-in" (click)="onGoogleLoginClick()">
+      <img [src]="'assets/images/google.svg'" alt="google"/>
+      <span>Continue with Google</span>
+    </button>
+
+  </div>
+
+  <div *ngIf="token" class="token-box">
+    <h4>Your Token:</h4>
+    <button [ngClass]="isCopied ? 'btn btn-primary' : 'btn btn-secondary'" (click)="copyToken()">
+      {{ isCopied ? 'Copied' : 'Copy' }}
+    </button><br>
+
+    <h5>Swagger: </h5>
+    <a href="https://localhost:7097/swagger/index.html"> open</a>
+  </div>
+
+</div>
