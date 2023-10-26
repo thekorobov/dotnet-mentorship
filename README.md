@@ -17,7 +17,23 @@ To give you a quick idea of the complexity involved in each project, I've catego
 
 ## 📈 Projects Overview
 
-### [RemindersWebAPI](https://github.com/IT-Sadok/thekorobov#reminderswebapi--1) 🟡
+### [TicketFlow]() 🔴
+*in the process of development...*
+### 🛠️ Tech Stack
+
+- **Project Type**: Full-stack project (ASP.NET Core WebAPI + Angular)
+- **Architecture**: Clean Architecture
+- **Key Architecture Patterns**: CQRS + MediatR, UnitOfWork + Repository 
+- **Database**: PostgreSQL
+- **Frontend**: Angular 
+- **Background Jobs**: Hangfire *(soon)*
+- **Email Service**: MailKit
+- **Authentication**: Google OAuth2 *(soon)*
+- **Deployment**: Azure *(soon)*
+- **CI/CD**: GitHub Actions
+- **Testing**: Unit Testing with xUnit
+
+### [RemindersWebAPI](https://github.com/thekorobov/dotnet-mentorship#reminderswebapi--1) 🟡
 
 ### 🛠️ Tech Stack
 
@@ -34,7 +50,7 @@ To give you a quick idea of the complexity involved in each project, I've catego
 - **Concurrency Management**: Parallel execution of tasks for sending emails
 - **Testing**: Unit Testing with xUnit
 
-### [CodeSnippetRunnerMVC](https://github.com/IT-Sadok/thekorobov#codesnippetrunnermvc--1) 🟡
+### [CodeSnippetRunnerMVC](https://github.com/thekorobov/dotnet-mentorship#codesnippetrunnermvc--1) 🟡
 
 ### 🛠️ Tech Stack
 
@@ -47,7 +63,7 @@ To give you a quick idea of the complexity involved in each project, I've catego
 - **Code Execution**: Roslyn Compiler
 - **Testing**: Unit and Integration Testing with xUnit
 
-### [Reminders](https://github.com/IT-Sadok/thekorobov#reminders--1) 🟢
+### [Reminders](https://github.com/thekorobov/dotnet-mentorship#reminders--1) 🟢
 
 ### 🛠️ Tech Stack
 
