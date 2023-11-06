@@ -25,6 +25,7 @@ export class LoginPageComponent {
         (data: any) => {
           if (data['status'] == 200) {
             this.token = data.body.Data.token;
+            localStorage.setItem('jwtToken', this.token);
           }
         },
         (error: any) => {
@@ -39,6 +40,7 @@ export class LoginPageComponent {
         (response: any) => {
           if (response.status === 200) {
             this.token = response.body.Data.token;
+            localStorage.setItem('jwtToken', this.token);
           }
         },
         (error: any) => {

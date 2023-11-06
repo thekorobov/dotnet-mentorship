@@ -1,13 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule } from 'angularx-social-login';
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from './app-routing.module';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
 import { HttpService} from "./api/http.service";
+import { AuthInterceptor } from "./interceptors/auth.interceptor" ;
 
 @NgModule({
   declarations: [
@@ -23,11 +24,17 @@ import { HttpService} from "./api/http.service";
     AppRoutingModule
   ],
   providers: [
-    [HttpService],
+    HttpService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptor,
+      multi: true
+    },
     {
       provide: 'SocialAuthServiceConfig',
       useValue: {
         autoLogin: false,
+        multi: true,
         providers: [
           {
             id: GoogleLoginProvider.PROVIDER_ID,
@@ -39,9 +46,10 @@ import { HttpService} from "./api/http.service";
             )
           }
         ]
-      } as SocialAuthServiceConfig
+      }
     }
   ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
